@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg x="0px" y="0px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 32 32" xml:space="preserve" id="Add_Data_Source">
+  <style type="text/css">
+	.Green{fill:#039C23;}
+	.Yellow{fill:#FFB115;}
+</style>
+  <path d="M4,10V6c0-2.2,4.5-4,10-4s10,1.8,10,4v4c0,2.2-4.5,4-10,4S4,12.2,4,10z M14,20c2.3,0,4.3-0.3,6-0.8V16h4v-4  c0,2.2-4.5,4-10,4S4,14.2,4,12v4C4,18.2,8.5,20,14,20z M16,21.9C15.4,22,14.7,22,14,22c-5.5,0-10-1.8-10-4v4c0,2.2,4.5,4,10,4  c0.7,0,1.4,0,2-0.1V21.9z" fill="#FFB115" class="Yellow" />
+  <polygon points="30,22 26,22 26,18 22,18 22,22 18,22 18,26 22,26 22,30 26,30 26,26 30,26 " fill="#039C23" class="Green" />
+</svg>

@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F717712B-9AF6-43EA-9CDA-B40E28D29C00}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>dhProje_marketOtomasyonu</RootNamespace>
+    <AssemblyName>dhProje_marketOtomasyonu</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="csCustomTables.cs" />
+    <Compile Include="csExceleAktar.cs" />
+    <Compile Include="Firma\frmFirmaDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\frmFirmaDetay.Designer.cs">
+      <DependentUpon>frmFirmaDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firma\frmFirmaEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\frmFirmaEkle.Designer.cs">
+      <DependentUpon>frmFirmaEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firma\frmFirmaHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\frmFirmaHareketleri.Designer.cs">
+      <DependentUpon>frmFirmaHareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firma\frmFirmaOdeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\frmFirmaOdeme.Designer.cs">
+      <DependentUpon>frmFirmaOdeme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firma\frmFirmaTakibi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\frmFirmaTakibi.Designer.cs">
+      <DependentUpon>frmFirmaTakibi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\frmSiparisDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\frmSiparisDetay.Designer.cs">
+      <DependentUpon>frmSiparisDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\frmSiparisIptal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\frmSiparisIptal.Designer.cs">
+      <DependentUpon>frmSiparisIptal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\frmKullaniciGirisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\frmKullaniciGirisi.Designer.cs">
+      <DependentUpon>frmKullaniciGirisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\frmKasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\frmKasa.Designer.cs">
+      <DependentUpon>frmKasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\frmKullaniciIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\frmKullaniciIslemleri.Designer.cs">
+      <DependentUpon>frmKullaniciIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Musteri\frmMusteriDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri\frmMusteriDetay.Designer.cs">
+      <DependentUpon>frmMusteriDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Urun\frmKategoriEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Urun\frmKategoriEkle.Designer.cs">
+      <DependentUpon>frmKategoriEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Urun\frmMalzemeEnvanter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Urun\frmMalzemeEnvanter.Designer.cs">
+      <DependentUpon>frmMalzemeEnvanter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\frmMarket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\frmMarket.Designer.cs">
+      <DependentUpon>frmMarket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\Kullanicilar.cs" />
+    <Compile Include="Musteri\frmMusteriEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri\frmMusteriEkle.Designer.cs">
+      <DependentUpon>frmMusteriEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Musteri\frmMusteriBul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri\frmMusteriBul.Designer.cs">
+      <DependentUpon>frmMusteriBul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSatisRaporlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSatisRaporlari.Designer.cs">
+      <DependentUpon>frmSatisRaporlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Musteri\frmVeresiye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri\frmVeresiye.Designer.cs">
+      <DependentUpon>frmVeresiye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\OrderDetails.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmAnasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnasayfa.Designer.cs">
+      <DependentUpon>frmAnasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbConnection.cs" />
+    <Compile Include="Urun\frmStokEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Urun\frmStokEkle.Designer.cs">
+      <DependentUpon>frmStokEkle.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Firma\frmFirmaDetay.resx">
+      <DependentUpon>frmFirmaDetay.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firma\frmFirmaEkle.resx">
+      <DependentUpon>frmFirmaEkle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firma\frmFirmaHareketleri.resx">
+      <DependentUpon>frmFirmaHareketleri.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnasayfa.resx">
+      <DependentUpon>frmAnasayfa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firma\frmFirmaTakibi.resx">
+      <DependentUpon>frmFirmaTakibi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\frmSiparisDetay.resx">
+      <DependentUpon>frmSiparisDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\frmSiparisIptal.resx">
+      <DependentUpon>frmSiparisIptal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\frmKullaniciGirisi.resx">
+      <DependentUpon>frmKullaniciGirisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\frmKasa.resx">
+      <DependentUpon>frmKasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\frmKullaniciIslemleri.resx">
+      <DependentUpon>frmKullaniciIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteri\frmMusteriDetay.resx">
+      <DependentUpon>frmMusteriDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Urun\frmKategoriEkle.resx">
+      <DependentUpon>frmKategoriEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Urun\frmMalzemeEnvanter.resx">
+      <DependentUpon>frmMalzemeEnvanter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\frmMarket.resx">
+      <DependentUpon>frmMarket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSatisRaporlari.resx">
+      <DependentUpon>frmSatisRaporlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteri\frmMusteriBul.resx">
+      <DependentUpon>frmMusteriBul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteri\frmMusteriEkle.resx">
+      <DependentUpon>frmMusteriEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteri\frmVeresiye.resx">
+      <DependentUpon>frmVeresiye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Urun\frmStokEkle.resx">
+      <DependentUpon>frmStokEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\market.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\market1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\market2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\market3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\market4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\market5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\market6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next2.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_report.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addquery.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_appointment.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\columntotalsposition.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\singlesheet.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_vendor.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletedatasource.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\managequeries.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adddatasource.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_addcircled.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next3.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_audit_changehistory.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addnewdatasource_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changedatasourcepivottable_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletedatasource_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editdatasource_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttocsv_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttocsv_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fill_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\converttorange_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financial_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshallpivottable_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_cash.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_cash1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\task.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_wallet.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletetablecells.svg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
