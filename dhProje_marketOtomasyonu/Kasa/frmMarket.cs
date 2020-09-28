@@ -365,15 +365,18 @@ namespace dhProje_marketOtomasyonu
             {
                 DataRow dataRow = gvList.GetFocusedDataRow();
 
+                decimal totalRowPrice = Convert.ToDecimal(dataRow.ItemArray[5]);
+
                 gvList.DeleteSelectedRows();
 
                 dt.Rows.Remove(dataRow);
 
+                TotalTotalRowPrice -= totalRowPrice;
+                txtSummary.Text = TotalTotalRowPrice.ToString();
 
                 int totalRows = gvList.RowCount;
                 //Her işlem yapıldığında sonuncu satırdan itibaren başlamasına emin oluyorum
                 gvList.FocusedRowHandle = totalRows - 1;
-
 
             }
 

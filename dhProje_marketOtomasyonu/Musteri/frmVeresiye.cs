@@ -29,46 +29,30 @@ namespace dhProje_marketOtomasyonu
 
 
         string lkpCustomerId = "";
+        int CustomerId = 0;
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
             csExceleAktar csExceleAktar = new csExceleAktar(gcList);
         }
 
+
         private void btnSil_Click(object sender, EventArgs e)
         {
             try
             {
-                DialogResult answer = MessageBox.Show("Seçilen müşteri kalıcı olarak silinecektir. \n\nOnaylıyor musunuz?", "Müşteri Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                CustomerId = Convert.ToInt32(gvList.GetFocusedRowCellDisplayText("CustomerId"));
 
-                if (answer == DialogResult.No)
-                {
-                    return;
-                }
+                //todo: BURADA TRANSACTION ŞART. YOKSA BİR HATADA 3 ayrı tablodan, müşteri ile ilgili ÖNEMLİ BİLGİLER ZİYAN OLUYOR.
+                //todo: BURADA Cascade yapıyı kontrol etmek şart. Vaktin olursa yap.
 
-                SqlCommand cmd = new SqlCommand()
-                {
-                    CommandType = CommandType.Text,
-                    Connection = DbConnection.Connect(),
-                };
-
-                cmd.CommandText = @"DELETE FROM Customers WHERE CustomerId =@CustomerId";
-
-                cmd.Parameters.Add(@"CustomerId", SqlDbType.NVarChar).Value = gvList.GetFocusedRowCellDisplayText("CustomerId");
-
-                cmd.ExecuteNonQuery();
-
-                cmd.Dispose();
-                cmd.Parameters.Clear();
-
-
-                dtCustomers.Clear();
-                daCustomers.Fill(dtCustomers);
+                DeleteOrdersOfCustomer();
+                DeleteCustomerDebt();
+                DeleteCustomer();
             }
             catch (Exception hata)
             {
-                MessageBox.Show(hata.Message + " " + hata.StackTrace);
-
+                MessageBox.Show(hata.Message);
             }
         }
 
@@ -86,6 +70,8 @@ namespace dhProje_marketOtomasyonu
             try
             {
                 frmMusteriEkle frmMusteriEkle = new frmMusteriEkle("-1");
+                frmMusteriEkle.FormClosed += FrmMusteriEkle_FormClosed;
+
                 frmMusteriEkle.ShowDialog();
             }
             catch (Exception hata)
@@ -168,6 +154,47 @@ namespace dhProje_marketOtomasyonu
 
         }
 
+
+        private void btnMusteriBorcEkle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmBorcEkle frmBorcEkle = new frmBorcEkle(gvList.GetFocusedRowCellValue("CustomerId").ToString(), gvList.GetFocusedRowCellValue("CustomerName").ToString(), "Insert");
+
+                frmBorcEkle.FormClosed += FrmBorcEkle_FormClosed;
+
+                frmBorcEkle.ShowDialog();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message);
+            }
+        }
+
+        private void FrmBorcEkle_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dtCustomers.Clear();
+            daCustomers.Fill(dtCustomers);
+        }
+
+        private void btnMusteriBorcGuncelle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmBorcEkle frmBorcEkle = new frmBorcEkle(gvList.GetFocusedRowCellValue("CustomerId").ToString(), gvList.GetFocusedRowCellValue("CustomerName").ToString(), "Update");
+
+                frmBorcEkle.FormClosed += FrmBorcEkle_FormClosed;
+
+                frmBorcEkle.ShowDialog();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message);
+            }
+
+        }
+
+
         void FillCustomerLookupedit()
         {
             try
@@ -240,7 +267,108 @@ WHERE        (dbo.Customers.CustomerId = @CustomerId)", DbConnection.Connect()))
             }
         }
 
-      
+        void DeleteCustomer()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand()
+                {
+                    CommandType = CommandType.Text,
+                    Connection = DbConnection.Connect(),
+                };
+
+                cmd.CommandText = @"DELETE FROM Customers WHERE CustomerId =@CustomerId";
+
+
+                cmd.Parameters.Add(@"CustomerId", SqlDbType.Int).Value = CustomerId;
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+                cmd.Parameters.Clear();
+
+
+                dtCustomers.Clear();
+                daCustomers.Fill(dtCustomers);
+
+               
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message + " " + hata.StackTrace);
+                throw;
+            }
+        }
+
+        void DeleteCustomerDebt()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand()
+                {
+                    CommandType = CommandType.Text,
+                    Connection = DbConnection.Connect(),
+                };
+
+                cmd.CommandText = @"DELETE FROM CustomerDebts WHERE CustomerId =@CustomerId";
+
+
+                cmd.Parameters.Add(@"CustomerId", SqlDbType.Int).Value = CustomerId;
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+                cmd.Parameters.Clear();
+
+                dtCustomers.Clear();
+                daCustomers.Fill(dtCustomers);
+
+                
+
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message + " " + hata.StackTrace);
+
+            }
+        }
+
+        void DeleteOrdersOfCustomer()
+        {
+            try
+            {
+                DialogResult answer = MessageBox.Show("Seçilen müşterinin varsa borcu ve kaydı kalıcı olarak silinecektir. \n\nOnaylıyor musunuz?", "Müşteri ve Borç Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+               // DialogResult answer = MessageBox.Show("Borç SIFIRLANACAKTIR. \n\nOnaylıyor musunuz?", "Müşteri ////Bakiye", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (answer == DialogResult.No)
+                {
+                    return;
+                }
+
+                SqlCommand cmd = new SqlCommand { CommandType = CommandType.Text, Connection = DbConnection.Connect() };
+
+                cmd.CommandText = @"UPDATE Orders
+            SET       CustomersId =@NullCustomersId WHERE CustomersId=@CustomersId";
+
+
+                cmd.Parameters.Add("@CustomersId", SqlDbType.Int).Value = CustomerId;
+                cmd.Parameters.Add("@NullCustomersId", SqlDbType.Int).Value = DBNull.Value;
+
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+
+               
+
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message + " " + hata.StackTrace);
+                throw;
+            }
+
+        }
     }
 }
 

@@ -22,6 +22,7 @@ namespace dhProje_marketOtomasyonu
         }
 
         string _customerId = "";
+        int newCustomerId = 0;
 
         private void frmMusteriEkle_Load(object sender, EventArgs e)
         {
@@ -36,6 +37,7 @@ namespace dhProje_marketOtomasyonu
             if (_customerId == "-1")
             {
                 InsertCustomer();
+                InsertCustomerDebt();
             }
             else
             {
@@ -93,8 +95,7 @@ namespace dhProje_marketOtomasyonu
                 SqlCommand cmd = new SqlCommand { CommandType = CommandType.Text, Connection = DbConnection.Connect() };
 
                 cmd.CommandText = @"INSERT INTO Customers(CustomerName, Address, City, Phone, Region, PostalCode, SocialNumber)
-VALUES (@CustomerName,@Address,@City,@Phone,@PostalCode,@Region,@SocialNumber)";
-
+VALUES (@CustomerName,@Address,@City,@Phone,@PostalCode,@Region,@SocialNumber) SET  @newCustomerId=SCOPE_IDENTITY()";
 
                 cmd.Parameters.Add("@CustomerName", SqlDbType.NVarChar).Value = txtCustomerName.Text;
 
@@ -110,13 +111,16 @@ VALUES (@CustomerName,@Address,@City,@Phone,@PostalCode,@Region,@SocialNumber)";
 
                 cmd.Parameters.Add("@SocialNumber", SqlDbType.NVarChar).Value = txtSocialNumber.Text;
 
+                cmd.Parameters.Add("@newCustomerId", SqlDbType.Int).Direction = ParameterDirection.Output;
+
                 cmd.ExecuteNonQuery();
+
+                newCustomerId = Convert.ToInt32(cmd.Parameters["@newCustomerId"].Value);
+                
                 cmd.Parameters.Clear();
+
                 cmd.Dispose();
 
-                MessageBox.Show("Yeni müşteri eklendi ✔");
-
-                this.Close();
 
             }
             catch (Exception hata)
@@ -125,6 +129,25 @@ VALUES (@CustomerName,@Address,@City,@Phone,@PostalCode,@Region,@SocialNumber)";
             }
         }
 
+        void InsertCustomerDebt()
+        {
+            SqlCommand cmd = new SqlCommand { CommandType = CommandType.Text, Connection = DbConnection.Connect() };
+
+            cmd.CommandText = @"INSERT INTO CustomerDebts(CustomerId, DebtQuantity)
+VALUES (@CustomerId, @DebtQuantity)";
+
+            cmd.Parameters.Add("@CustomerId", SqlDbType.NVarChar).Value = newCustomerId;
+            cmd.Parameters.Add("@DebtQuantity", SqlDbType.Decimal).Value = 0;
+
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            cmd.Dispose();
+
+            MessageBox.Show("Yeni müşteri eklendi ✔");
+
+            this.Close();
+
+        }
 
         void UpdateCustomer()
         {

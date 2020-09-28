@@ -123,6 +123,12 @@
     <Compile Include="Kullanici\frmKullaniciIslemleri.Designer.cs">
       <DependentUpon>frmKullaniciIslemleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Musteri\frmBorcEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteri\frmBorcEkle.Designer.cs">
+      <DependentUpon>frmBorcEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Musteri\frmMusteriDetay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kullanici\frmKullaniciIslemleri.resx">
       <DependentUpon>frmKullaniciIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteri\frmBorcEkle.resx">
+      <DependentUpon>frmBorcEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri\frmMusteriDetay.resx">
       <DependentUpon>frmMusteriDetay.cs</DependentUpon>

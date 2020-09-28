@@ -35,9 +35,7 @@
             this.lkpMusterilerGrid = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MüsteriAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TcNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnMusteriBorcSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnMusteriBorcEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMusteriBorcOdeme = new DevExpress.XtraEditors.SimpleButton();
             this.btnHepsiniGetir = new DevExpress.XtraEditors.SimpleButton();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
@@ -76,9 +74,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.lkpMusteriler);
-            this.panel1.Controls.Add(this.btnMusteriBorcSil);
             this.panel1.Controls.Add(this.btnMusteriBorcEkle);
-            this.panel1.Controls.Add(this.btnMusteriBorcOdeme);
             this.panel1.Controls.Add(this.btnHepsiniGetir);
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnSil);
@@ -134,41 +130,18 @@
             this.TcNo.Visible = true;
             this.TcNo.VisibleIndex = 1;
             // 
-            // btnMusteriBorcSil
-            // 
-            this.btnMusteriBorcSil.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMusteriBorcSil.Appearance.Options.UseFont = true;
-            this.btnMusteriBorcSil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMusteriBorcSil.ImageOptions.SvgImage = global::dhProje_marketOtomasyonu.Properties.Resources.deletetablecells;
-            this.btnMusteriBorcSil.Location = new System.Drawing.Point(710, 58);
-            this.btnMusteriBorcSil.Name = "btnMusteriBorcSil";
-            this.btnMusteriBorcSil.Size = new System.Drawing.Size(175, 41);
-            this.btnMusteriBorcSil.TabIndex = 50;
-            this.btnMusteriBorcSil.Text = "Borç Sil";
-            // 
             // btnMusteriBorcEkle
             // 
             this.btnMusteriBorcEkle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMusteriBorcEkle.Appearance.Options.UseFont = true;
             this.btnMusteriBorcEkle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMusteriBorcEkle.ImageOptions.SvgImage = global::dhProje_marketOtomasyonu.Properties.Resources.business_cash1;
-            this.btnMusteriBorcEkle.Location = new System.Drawing.Point(577, 24);
+            this.btnMusteriBorcEkle.Location = new System.Drawing.Point(459, 24);
             this.btnMusteriBorcEkle.Name = "btnMusteriBorcEkle";
             this.btnMusteriBorcEkle.Size = new System.Drawing.Size(109, 61);
             this.btnMusteriBorcEkle.TabIndex = 49;
             this.btnMusteriBorcEkle.Text = "Borç \r\nEkle";
-            // 
-            // btnMusteriBorcOdeme
-            // 
-            this.btnMusteriBorcOdeme.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMusteriBorcOdeme.Appearance.Options.UseFont = true;
-            this.btnMusteriBorcOdeme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMusteriBorcOdeme.ImageOptions.SvgImage = global::dhProje_marketOtomasyonu.Properties.Resources.shopping_wallet;
-            this.btnMusteriBorcOdeme.Location = new System.Drawing.Point(316, 24);
-            this.btnMusteriBorcOdeme.Name = "btnMusteriBorcOdeme";
-            this.btnMusteriBorcOdeme.Size = new System.Drawing.Size(112, 61);
-            this.btnMusteriBorcOdeme.TabIndex = 48;
-            this.btnMusteriBorcOdeme.Text = "Borç \r\nÖdeme";
+            this.btnMusteriBorcEkle.Click += new System.EventHandler(this.btnMusteriBorcEkle_Click);
             // 
             // btnHepsiniGetir
             // 
@@ -188,9 +161,9 @@
             this.btnExcel.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnExcel.Appearance.Options.UseFont = true;
             this.btnExcel.ImageOptions.Image = global::dhProje_marketOtomasyonu.Properties.Resources.exporttocsv_32x32;
-            this.btnExcel.Location = new System.Drawing.Point(1220, 24);
+            this.btnExcel.Location = new System.Drawing.Point(1132, 24);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(43, 61);
+            this.btnExcel.Size = new System.Drawing.Size(91, 61);
             this.btnExcel.TabIndex = 4;
             this.btnExcel.Text = "Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
@@ -200,9 +173,9 @@
             this.btnSil.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSil.Appearance.Options.UseFont = true;
             this.btnSil.ImageOptions.Image = global::dhProje_marketOtomasyonu.Properties.Resources.cancel_32x322;
-            this.btnSil.Location = new System.Drawing.Point(1028, 58);
+            this.btnSil.Location = new System.Drawing.Point(975, 24);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(175, 41);
+            this.btnSil.Size = new System.Drawing.Size(127, 61);
             this.btnSil.TabIndex = 2;
             this.btnSil.Text = "Müşteri Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -213,22 +186,23 @@
             this.btnMusteriBorcGuncelle.Appearance.Options.UseFont = true;
             this.btnMusteriBorcGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMusteriBorcGuncelle.ImageOptions.SvgImage = global::dhProje_marketOtomasyonu.Properties.Resources.update;
-            this.btnMusteriBorcGuncelle.Location = new System.Drawing.Point(710, 9);
+            this.btnMusteriBorcGuncelle.Location = new System.Drawing.Point(574, 24);
             this.btnMusteriBorcGuncelle.Name = "btnMusteriBorcGuncelle";
-            this.btnMusteriBorcGuncelle.Size = new System.Drawing.Size(175, 41);
+            this.btnMusteriBorcGuncelle.Size = new System.Drawing.Size(117, 61);
             this.btnMusteriBorcGuncelle.TabIndex = 45;
-            this.btnMusteriBorcGuncelle.Text = "Borç Güncelle";
+            this.btnMusteriBorcGuncelle.Text = "Borç \r\nGüncelle";
+            this.btnMusteriBorcGuncelle.Click += new System.EventHandler(this.btnMusteriBorcGuncelle_Click);
             // 
             // btnGuncelle
             // 
             this.btnGuncelle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGuncelle.Appearance.Options.UseFont = true;
             this.btnGuncelle.ImageOptions.Image = global::dhProje_marketOtomasyonu.Properties.Resources.refreshallpivottable_32x32;
-            this.btnGuncelle.Location = new System.Drawing.Point(1028, 9);
+            this.btnGuncelle.Location = new System.Drawing.Point(842, 24);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(175, 41);
+            this.btnGuncelle.Size = new System.Drawing.Size(127, 61);
             this.btnGuncelle.TabIndex = 1;
-            this.btnGuncelle.Text = "Müşteri Güncelle";
+            this.btnGuncelle.Text = "Müşteri \r\nGüncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
@@ -236,7 +210,7 @@
             this.btnEkle.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnEkle.Appearance.Options.UseFont = true;
             this.btnEkle.ImageOptions.Image = global::dhProje_marketOtomasyonu.Properties.Resources.add_32x32;
-            this.btnEkle.Location = new System.Drawing.Point(900, 24);
+            this.btnEkle.Location = new System.Drawing.Point(724, 24);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(112, 61);
             this.btnEkle.TabIndex = 0;
@@ -249,7 +223,7 @@
             this.btnMusteriDetay.Appearance.Options.UseFont = true;
             this.btnMusteriDetay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMusteriDetay.ImageOptions.SvgImage = global::dhProje_marketOtomasyonu.Properties.Resources.bo_report;
-            this.btnMusteriDetay.Location = new System.Drawing.Point(450, 24);
+            this.btnMusteriDetay.Location = new System.Drawing.Point(319, 24);
             this.btnMusteriDetay.Name = "btnMusteriDetay";
             this.btnMusteriDetay.Size = new System.Drawing.Size(109, 61);
             this.btnMusteriDetay.TabIndex = 44;
@@ -302,9 +276,7 @@
         private DevExpress.XtraEditors.SimpleButton btnMusteriBorcGuncelle;
         private DevExpress.XtraEditors.SimpleButton btnMusteriDetay;
         private DevExpress.XtraEditors.SimpleButton btnAra;
-        private DevExpress.XtraEditors.SimpleButton btnMusteriBorcOdeme;
         private DevExpress.XtraEditors.SimpleButton btnMusteriBorcEkle;
-        private DevExpress.XtraEditors.SimpleButton btnMusteriBorcSil;
         private DevExpress.XtraEditors.GridLookUpEdit lkpMusteriler;
         private DevExpress.XtraGrid.Views.Grid.GridView lkpMusterilerGrid;
         private DevExpress.XtraGrid.Columns.GridColumn MüsteriAdi;
