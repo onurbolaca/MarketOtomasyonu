@@ -133,6 +133,16 @@ namespace dhProje_marketOtomasyonu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage bo_customer {
+            get {
+                object obj = ResourceManager.GetObject("bo_customer", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage bo_report {
             get {
                 object obj = ResourceManager.GetObject("bo_report", resourceCulture);
@@ -211,6 +221,16 @@ namespace dhProje_marketOtomasyonu.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("close_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage columntotalsposition {
@@ -226,6 +246,16 @@ namespace dhProje_marketOtomasyonu.Properties {
         internal static System.Drawing.Bitmap converttorange_32x32 {
             get {
                 object obj = ResourceManager.GetObject("converttorange_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap customer_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("customer_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,6 +443,16 @@ namespace dhProje_marketOtomasyonu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage newemployee {
+            get {
+                object obj = ResourceManager.GetObject("newemployee", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage next {
             get {
                 object obj = ResourceManager.GetObject("next", resourceCulture);
@@ -466,6 +506,16 @@ namespace dhProje_marketOtomasyonu.Properties {
         internal static System.Drawing.Bitmap printer_32x32 {
             get {
                 object obj = ResourceManager.GetObject("printer_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap publicfix_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("publicfix_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

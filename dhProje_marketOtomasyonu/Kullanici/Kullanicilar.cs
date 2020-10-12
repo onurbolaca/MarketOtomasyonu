@@ -14,9 +14,5 @@ namespace dhProje_marketOtomasyonu.Kullanicilar
 
         public static int EmployeesId;
 
-
-
-
-
     }
 }

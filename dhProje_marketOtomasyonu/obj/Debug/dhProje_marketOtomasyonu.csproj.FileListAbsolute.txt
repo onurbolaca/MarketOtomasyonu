@@ -114,3 +114,4 @@ C:\Users\PC\source\repos\dhProje_marketOtomasyonu\dhProje_marketOtomasyonu\obj\D
 C:\Users\PC\source\repos\dhProje_marketOtomasyonu\dhProje_marketOtomasyonu\obj\Debug\dhProje_marketOtomasyonu.Urun.frmKategoriEkle.resources
 C:\Users\PC\source\repos\dhProje_marketOtomasyonu\dhProje_marketOtomasyonu\obj\Debug\dhProje_marketOtomasyonu.Musteri.frmMusteriDetay.resources
 C:\Users\PC\source\repos\dhProje_marketOtomasyonu\dhProje_marketOtomasyonu\obj\Debug\dhProje_marketOtomasyonu.Musteri.frmBorcEkle.resources
+C:\Users\PC\source\repos\dhProje_marketOtomasyonu\dhProje_marketOtomasyonu\obj\Debug\dhProje_marketOtomasyonu.Kullanici.frmKullaniciEkle.resources

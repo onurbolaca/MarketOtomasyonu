@@ -52,6 +52,7 @@ namespace dhProje_marketOtomasyonu.Urun
         {
             if (rdoSil.Checked)
             {
+
                 txtEkle.Text = "";
                 lkpSec.Focus();
             }

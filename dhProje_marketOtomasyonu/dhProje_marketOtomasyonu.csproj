@@ -105,6 +105,12 @@
     <Compile Include="Kasa\frmSiparisIptal.Designer.cs">
       <DependentUpon>frmSiparisIptal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kullanici\frmKullaniciEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\frmKullaniciEkle.Designer.cs">
+      <DependentUpon>frmKullaniciEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kullanici\frmKullaniciGirisi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kasa\frmSiparisIptal.resx">
       <DependentUpon>frmSiparisIptal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\frmKullaniciEkle.resx">
+      <DependentUpon>frmKullaniciEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kullanici\frmKullaniciGirisi.resx">
       <DependentUpon>frmKullaniciGirisi.cs</DependentUpon>
@@ -419,6 +428,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\deletetablecells.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\publicfix_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newemployee.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_customer.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
